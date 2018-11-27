@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  http:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+  jmx:
+    enabled: false
+  aop:
+    proxy-target-class: true # 设置为true 切面强制使用cglib 不用jdk代理
+    auto: true
+    # spring..jmx.enabled 如果为true,那么FastDFS的StorageServer的链接池就创建不了会报错，这个为false时,那么JMX监控就用不了.
+#logging:
+#  config: classpath:logging-config.xml
+#  level:
+#    org.springframework.web: error
+#    com.siping.fi: debug
+#    com.zaxxer.hikari: error
+mybatis:
+  mapper-locations: classpath:sqlmap/**/*.xml
+  type-aliases-package: com.ele.entity.EO
