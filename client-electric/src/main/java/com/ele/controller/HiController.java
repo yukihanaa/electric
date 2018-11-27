@@ -18,7 +18,7 @@ public class HiController {
     @RequestMapping("/hi")
     @HystrixCommand(fallbackMethod = "hiError")
     public String home(@RequestParam(value = "name",defaultValue = "yc") String name){
-        return " hi "+name+" , i am from port:"+port+" 我不管我最帅";
+        return " hi "+name+" , i am from port:"+port+" 我不管我最帅  ";
     }
 
 
