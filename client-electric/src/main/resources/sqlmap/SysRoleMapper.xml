@@ -3,13 +3,8 @@
 
 <mapper namespace="com.ele.mapper.SysRoleMapper">
 	<!--<resultMap id="userAndRole" type="">-->
-
+		<!---->
 	<!--</resultMap>-->
-	
-	
-	
-	
-
 
 	<sql id="baseSql">
 		id,create_time,create_by,update_time,update_by
@@ -22,7 +17,15 @@
 	</select>
 
 	<!--<select id="getRoleByUser" parameterType="map" resultMap="">-->
-
+		<!--select user.user_name,user.password,user.salt,user.state,user.show_name,-->
+		<!--role.role_no,role.role_name,role.description,role.avaliable-->
+		<!--FROM sys_user user-->
+		<!--left join sys_user_role sur on user.id=sur.user_id-->
+		<!--left join sys_role role on sur.role_id=role.id-->
+		<!--where 1=1-->
+	    <!--<if test="userName != null and userName !=''">-->
+			<!--AND user.user_name like concat('%',#{userName},'%')-->
+		<!--</if>-->
 	<!--</select>-->
 
 	

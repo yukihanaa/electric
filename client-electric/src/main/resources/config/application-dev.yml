@@ -22,9 +22,9 @@ spring:
     hikari:
       maxLifetime: 1765000
       maximumPoolSize: 15
-#logging:
-#  level:
-#    com:
-#      siping:
-#        erp: debug
+logging:
+  level:
+    com:
+      ele:
+        mapper: debug
 
