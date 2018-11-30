@@ -1,7 +1,7 @@
 package com.ele.controller;
 
-import com.ele.entity.EO.User;
-import com.ele.service.UserService;
+import com.ele.entity.SysUser;
+import com.ele.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ import java.util.List;
 public class HiController {
 
     @Autowired
-    private UserService userService;
+    private SysUserService sysUserService;
 
     @Value("${server.port}")
     String port;
@@ -35,9 +35,9 @@ public class HiController {
     }
 
     @GetMapping("/getUserList")
-    public List<User> getUserList(){
+    public List<SysUser> getUserList(){
         try {
-            return userService.getUserList();
+            return sysUserService.getUserList();
         }catch (Exception e){
             e.printStackTrace();
             return null;

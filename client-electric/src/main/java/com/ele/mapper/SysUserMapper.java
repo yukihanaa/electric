@@ -1,6 +1,6 @@
 package com.ele.mapper;
 
-import com.ele.entity.EO.User;
+import com.ele.entity.SysUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -11,8 +11,7 @@ import java.util.List;
  */
 @Repository
 @Mapper
-public interface UserMapper {
+public interface SysUserMapper {
 
-
-    List<User> getUserList() throws Exception;
+    List<SysUser> getUserList() throws Exception;
 }

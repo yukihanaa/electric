@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ele.mapper.SysPermissionMapper">
+
+
+	<sql id="baseSql">
+		id,create_time,create_by,update_time,update_by
+	</sql>
+	
+
+	<select id="getPermissionList" resultType="com.ele.entity.SysPermission">
+		select <include refid="baseSql"/>,
+		url,permission,description from sys_permission;
+	</select>
+
+
+	
+</mapper>
+

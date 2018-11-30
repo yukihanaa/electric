@@ -23,4 +23,4 @@ spring:
 #    com.zaxxer.hikari: error
 mybatis:
   mapper-locations: classpath:sqlmap/**/*.xml
-  type-aliases-package: com.ele.entity.EO
+  type-aliases-package: com.ele.entity

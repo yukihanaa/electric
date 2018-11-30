@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ele.mapper.SysRoleMapper">
+	<!--<resultMap id="userAndRole" type="">-->
+
+	<!--</resultMap>-->
+	
+	
+	
+	
+
+
+	<sql id="baseSql">
+		id,create_time,create_by,update_time,update_by
+	</sql>
+	
+
+	<select id="getRoleList" resultType="com.ele.entity.SysRole">
+		select <include refid="baseSql"/>,
+		role_no,role_name,description,avaliable from sys_role;
+	</select>
+
+	<!--<select id="getRoleByUser" parameterType="map" resultMap="">-->
+
+	<!--</select>-->
+
+	
+</mapper>
+
