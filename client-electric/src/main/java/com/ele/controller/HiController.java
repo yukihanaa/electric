@@ -1,5 +1,6 @@
 package com.ele.controller;
 
+import com.ele.config.RedisService;
 import com.ele.entity.SysUser;
 import com.ele.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class HiController {
 
     @Autowired
     private SysUserService sysUserService;
+    @Autowired
+    private RedisService redisService;
 
     @Value("${server.port}")
     String port;
@@ -35,8 +38,9 @@ public class HiController {
     }
 
     @GetMapping("/getUserList")
-    public List<SysUser> getUserList(){
+    public List<SysUser> getUserList(@RequestParam("test") String test){
         try {
+            redisService.setObject("1",test);
             return sysUserService.getUserList();
         }catch (Exception e){
             e.printStackTrace();

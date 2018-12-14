@@ -6,7 +6,7 @@ spring:
     host: 127.0.0.1
     port: 6379
     database: 0 #默认零号数据库
-    password:  #链接密码
+    password: siping #链接密码
     timeout: 3000  # 链接超时时间.
     pool: 
       max-active: 100 # 连接池最大连接数（使用负值表示没有限制）
