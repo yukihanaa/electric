@@ -1,5 +1,8 @@
 package com.ele;
 
+import com.ele.listener.NettyServerListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,12 +12,19 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*@EnableHystrix
 @EnableHystrixDashboard
 @EnableCircuitBreaker*/
-public class ClientElectricApplication {
+public class ClientElectricApplication implements CommandLineRunner {
+
+	@Autowired
+	private NettyServerListener nettyServerListener;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ClientElectricApplication.class, args);
 	}
 
+	@Override
+	public void run(String... strings) throws Exception {
+		nettyServerListener.start();
+	}
 
 
 //	@Bean
